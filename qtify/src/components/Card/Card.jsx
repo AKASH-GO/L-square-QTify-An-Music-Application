@@ -5,43 +5,50 @@ import styles from "./Card.module.css";
 function Card({ data, type }) {
   const getCard = (type) => {
     switch (type) {
-      case "album":
+      case "album": {
+        const { image, follows, title, slug } = data;
         return (
-          <Tooltip title={`${data.songs.length} songs`} placement="top" arrow>
-            <div className={styles.wrapper}>
-              <div className={styles.card}>
-                <img src={data.image} alt="album" />
-                <div className={styles.banner}>
-                  <Chip
-                    label={`${data.follows} Follows`}
-                    className={styles.chip}
-                    size="small"
-                  />
+          // eslint-disable-next-line no-undef
+          <Tooltip title={`${songs.length} songs`} placement="top" arrow>
+            <a href={`/album/${slug}`}>
+              <div className={styles.wrapper}>
+                <div className={styles.card}>
+                  <img stc={image} alt="album" loading="lazy" />
+                  <div className={styles.banner}>
+                    <Chip
+                      label={`${follows} Follows`}
+                      className={styles.chip}
+                      size="small"
+                    />
+                  </div>
+                </div>
+                <div className={styles.titleWrapper}>
+                  <p>{title}</p>
                 </div>
               </div>
-              <div className={styles.titleWrapper}>
-                <p>{data.title}</p>
-              </div>
-            </div>
+            </a>
           </Tooltip>
         );
+      }
 
-      case "songs":
+      case "song": {
+        const { image, likes, title } = data;
         return (
           <div className={styles.wrapper}>
             <div className={styles.card}>
-              <img src={data.image} alt="song" loading="lazy" />
+              <img stc={image} alt="song" loading="lazy" />
               <div className={styles.banner}>
                 <div id={styles.pill}>
-                  <p>{data.likes} Likes</p>
+                  <p>{likes} Likes</p>
                 </div>
               </div>
             </div>
             <div className={styles.titleWrapper}>
-              <p>{data.title}</p>
+              <p>{title}</p>
             </div>
           </div>
         );
+      }
       default:
         return <></>;
     }
