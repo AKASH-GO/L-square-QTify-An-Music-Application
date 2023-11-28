@@ -27,6 +27,7 @@ body {
 	-webkit-font-smoothing: antialiased;
 	background-color: var(--color-black);
 	color: var(--color-white);
+	overflow: hidden;
 }
 
 img,
@@ -60,6 +61,13 @@ h6 {
 	isolation: isolate;
 }
 
-/* .swiper-slide {
+.swiper-slide {
 	width: auto !important;
-} */
+}
+a,
+a:hover,
+a:focus,
+a:active{
+	text-decoration: none;
+	color: inherit;
+}
