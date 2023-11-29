@@ -23,7 +23,7 @@ function App() {
     <>
       <StyledEngineProvider injectFirst>
         <Navbar />
-        <Outlet context={{data:{topAlbums,newAlbums}}} />
+        <Outlet context={{ data: { topAlbums, newAlbums } }} />
       </StyledEngineProvider>
     </>
   );

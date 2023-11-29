@@ -1,19 +1,19 @@
 import React from "react";
 import { Tooltip, Chip } from "@mui/material";
 import styles from "./Card.module.css";
+import { Link } from "react-router-dom";
 
 function Card({ data, type }) {
   const getCard = (type) => {
     switch (type) {
       case "album": {
-        const { image, follows, title, slug } = data;
+        const { image, follows,songs, title, slug } = data;
         return (
-          // eslint-disable-next-line no-undef
           <Tooltip title={`${songs.length} songs`} placement="top" arrow>
-            <a href={`/album/${slug}`}>
+            <Link to={`/album/${slug}`}>
               <div className={styles.wrapper}>
                 <div className={styles.card}>
-                  <img stc={image} alt="album" loading="lazy" />
+                  <img src={image} alt="album" loading="lazy" />
                   <div className={styles.banner}>
                     <Chip
                       label={`${follows} Follows`}
@@ -26,7 +26,7 @@ function Card({ data, type }) {
                   <p>{title}</p>
                 </div>
               </div>
-            </a>
+            </Link>
           </Tooltip>
         );
       }
@@ -36,7 +36,7 @@ function Card({ data, type }) {
         return (
           <div className={styles.wrapper}>
             <div className={styles.card}>
-              <img stc={image} alt="song" loading="lazy" />
+              <img src={image} alt="song" loading="lazy" />
               <div className={styles.banner}>
                 <div id={styles.pill}>
                   <p>{likes} Likes</p>
