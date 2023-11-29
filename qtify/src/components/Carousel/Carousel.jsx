@@ -15,10 +15,10 @@ const Controls = ({ data }) => {
     swiper.slideTo(0, 1);
   }, [data, swiper]);
 
-  return <></>;
+  return null;
 };
 
-function Carousel({ data, renderComponent }) {
+export default function Carousel({ data, renderComponent }) {
   return (
     <div className={styles.wrapper}>
       <Swiper
@@ -33,13 +33,11 @@ function Carousel({ data, renderComponent }) {
         <CarouselLeftNavigation />
         <CarouselRightNavigation />
         
-        {data.map((ele) => (
-          <SwiperSlide>{renderComponent(ele)}</SwiperSlide>
+        {data.map((ele, index) => (
+          <SwiperSlide key={index}>{renderComponent(ele)}</SwiperSlide>
         ))}
         
       </Swiper>
     </div>
   );
 }
-
-export default Carousel;
