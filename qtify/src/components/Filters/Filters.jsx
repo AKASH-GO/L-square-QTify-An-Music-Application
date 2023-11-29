@@ -46,7 +46,7 @@ function Filters({ filters, selectedFilterIndex, setSelectedFilterIndex }) {
         }}
       >
         {filters.map((ele, idx) => (
-          <Tab classname={styles.tab} label={ele.label} {...a11yProps(idx)} />
+          <Tab className={styles.tab} label={ele.label} {...a11yProps(idx)} />
         ))}
       </Tabs>
       {filters.map((ele, idx) => (

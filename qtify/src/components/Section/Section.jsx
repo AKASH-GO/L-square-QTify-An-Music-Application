@@ -18,6 +18,7 @@ export default function Section({ title, data, filterSource, type }) {
       });
     }
   }, []);
+
   const showFilters = filters.length > 1;
   const cardsToRender = data?.filter((card) =>
     showFilters && selectedFilterIndex !== 0
@@ -37,7 +38,7 @@ export default function Section({ title, data, filterSource, type }) {
         </h4>
       </div>
       {showFilters && (
-        <div className={styles.filterwrapper}>
+        <div className={styles.filterWrapper}>
           <Filters
             filters={filters}
             selectedFilterIndex={selectedFilterIndex}
