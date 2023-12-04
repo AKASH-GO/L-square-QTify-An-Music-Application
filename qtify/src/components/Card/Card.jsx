@@ -16,7 +16,7 @@ function Card({ data, type }) {
                   <img src={image} alt="album" loading="lazy" />
                   <div className={styles.banner}>
                     <Chip
-                      label={`${follows} Follows`}
+                      label={`${follows} Follows`} 
                       className={styles.chip}
                       size="small"
                     />
